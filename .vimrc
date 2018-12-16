@@ -1,24 +1,16 @@
-set nocompatible   " be iMproved
-filetype off       " required!
+set exrc "this allows vim to source the .vimrc file outside the working directory
+set secure
 
-set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
+"indentation rules
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set noexpandtab
+"soft border for keeping lines less than 111 characters
+set colorcolumn=110
+highlight ColorColumn ctermbg=darkgray
 
-" let Vundle manage Vundle
-" required!
-Bundle 'gmarik/vundle'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'jlanzarotta/bufexplorer'
-
-filetype plugin indent on  " required!
-
-set bs=2
-set ts=4
-set sw=4
-set number
-" shows row and column number at bottom right corner
-set ruler
-syntax enable
-set background=dark
-let g:solarized_termcolors = 256
-colorscheme solarized
+augroup project
+    autocmd!
+    autocmd BufRead,BufNewFile *.h,*.c set filetype=c.doxygen
+augroup END
