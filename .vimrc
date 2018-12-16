@@ -6,8 +6,8 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set noexpandtab
-"soft border for keeping lines less than 111 characters
-set colorcolumn=110
+"soft border for keeping lines less than 75 characters
+set colorcolumn=75
 highlight ColorColumn ctermbg=darkgray
 
 augroup project
